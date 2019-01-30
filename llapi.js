@@ -18,16 +18,16 @@ router.post('/createsite', function (req, res) {
   var repoURL = req.body.urlinput;
 
   //Check if directory with site name exists
-  if (!fs.existsSync('./sites/' + sitename)){
+  if (!fs.existsSync('./sites/' + sitename)) {
     //if not, create one
     fs.mkdirSync('./sites/' + sitename);
   }
-  
+
   //Clone the git repo found at the passed URL into subdirectory "/sites" and give it its own directory
   git.Clone(repoURL, "./sites/" + sitename);
-  
+
   console.log("Create site request for URL: " + repoURL);
-  
+
   //Send successful response to client
   res.send("received URL: " + repoURL);
 });

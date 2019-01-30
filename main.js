@@ -14,7 +14,7 @@ const llapi = require('./llapi');
 app.use('/llapi', llapi);
 //Send all routes beginning with '/site' to:
 const siteaccess = require('./siteaccess');
-app.use('/site', siteaccess);
+app.use('/sites', siteaccess);
 
 //Make public files accessible
 app.use(express.static('public'));
