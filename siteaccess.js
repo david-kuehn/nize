@@ -4,6 +4,7 @@ var express = require('express');
 var app = express();
 var router = express.Router();
 
+//Route: /site/:siteName (ex. /site/testsite)
 router.get('/:siteName', function (req, res) {
   var siteName = req.params.siteName;
   console.log(siteName);
