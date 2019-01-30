@@ -7,8 +7,11 @@ const path = require('path');
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//Import external routers/routes
 const llapi = require('./llapi');
 app.use('/llapi', llapi);
+const siteaccess = require('./siteaccess');
+app.use('/site', siteaccess);
 
 app.use(express.static('public'));
 
