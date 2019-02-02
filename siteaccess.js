@@ -23,6 +23,8 @@ app.get('/:siteName', function (req, res) {
   const site = require(`./sites/${siteName}/main`);
   app.use(`/site/${siteName}`, site);
 
+  //app.use('/sites/site/testsite/testpublic', express.static('testpublic'));
+
   //Redirect the user to the new route
   res.redirect(`/sites/site/${siteName}`);
 
